@@ -20,8 +20,8 @@ class MongoContainer{
         try {
             const response = await this.model.find();
             const data = JSON.parse(JSON.stringify(response));
-            const responseDto = convertToDto(data);
-            return responseDto;
+            // const responseDto = convertToDto(data);
+            return data;
         } catch (error) {
             throw new Error(`Hubo un error ${error}`);
         }

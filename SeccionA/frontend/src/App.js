@@ -8,7 +8,12 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(()=>{
-    const getData = async()=>{ }
+    const getData = async()=>{
+      const response = await fetch("http://localhost:8080/users");
+      const jsonResponse = await response.json();
+      const data = jsonResponse.data;
+      setUsers(data);
+    }
     getData();
   },[]);
 
